@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Evgenij Boxberger</Authors>
+    <Company>Evgenij Boxberger</Company>
+    <Description>This Framework helps developers implement different protocols.</Description>
   </PropertyGroup>
 
 </Project>
