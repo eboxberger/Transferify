@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <!-- Required elements-->
+    <id>Transferify</id>
+    <version>0.1.0.0</version>
+    <description>Helps developers implement network protocols.</description>
+    <authors>Evgenij Boxberger</authors>
+
+    <!-- Optional elements -->
+	
+    <!-- ... -->
+    </metadata>
+    <!-- Optional 'files' node -->
+	<files>  
+		<file src="bin\Debug\Transferify.dll" target="lib\net45"></file>  
+	</files>  
+</package>

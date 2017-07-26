@@ -1,11 +1,105 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>Evgenij Boxberger</Authors>
-    <Company>Evgenij Boxberger</Company>
-    <Description>This Framework helps developers implement different protocols.</Description>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3172C817-0AA5-4BA6-8C59-7DE72BF31870}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Transferify</RootNamespace>
+    <AssemblyName>Transferify</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BufferOverflowException.cs" />
+    <Compile Include="DataBuffer.cs" />
+    <Compile Include="DataBufferPositionTagger.cs" />
+    <Compile Include="DataBufferSeeker.cs" />
+    <Compile Include="DataTypes\Boolean.cs" />
+    <Compile Include="DataTypes\ByteArray.cs" />
+    <Compile Include="DataTypes\Enumeration.cs" />
+    <Compile Include="DataTypes\FixedSizedByteArray.cs" />
+    <Compile Include="DataTypes\HighNibble.cs" />
+    <Compile Include="DataTypes\Interfaces\IBoolean.cs" />
+    <Compile Include="DataTypes\Interfaces\IByteArray.cs" />
+    <Compile Include="DataTypes\Interfaces\IEnumeration.cs" />
+    <Compile Include="DataTypes\Interfaces\IIpAddress.cs" />
+    <Compile Include="DataTypes\Interfaces\IMacAddress.cs" />
+    <Compile Include="DataTypes\Interfaces\INibble.cs" />
+    <Compile Include="DataTypes\Interfaces\IOctetString.cs" />
+    <Compile Include="DataTypes\Interfaces\IUnsigned16.cs" />
+    <Compile Include="DataTypes\Interfaces\IUnsigned32.cs" />
+    <Compile Include="DataTypes\Interfaces\IUnsigned8.cs" />
+    <Compile Include="DataTypes\Interfaces\IUuid.cs" />
+    <Compile Include="DataTypes\Interfaces\IVisibleString.cs" />
+    <Compile Include="DataTypes\IpAddress.cs" />
+    <Compile Include="DataTypes\LowNibble.cs" />
+    <Compile Include="DataTypes\MacAddress.cs" />
+    <Compile Include="DataTypes\Numeric.cs" />
+    <Compile Include="DataTypes\OctetString.cs" />
+    <Compile Include="DataTypes\String.cs" />
+    <Compile Include="DataTypes\Unsigned16.cs" />
+    <Compile Include="DataTypes\Unsigned32.cs" />
+    <Compile Include="DataTypes\Unsigned8.cs" />
+    <Compile Include="DataTypes\Uuid.cs" />
+    <Compile Include="DataTypes\VisibleString.cs" />
+    <Compile Include="DelayedLengthWriter.cs" />
+    <Compile Include="DynamicSizeBuffer.cs" />
+    <Compile Include="Extensions\ByteExtensions.cs" />
+    <Compile Include="Extensions\DataBufferPosition.cs" />
+    <Compile Include="Extensions\DataBufferReadWrite.cs" />
+    <Compile Include="Extensions\ReadableWritableExtensions.cs" />
+    <Compile Include="Extensions\TransferValueExtensions.cs" />
+    <Compile Include="FixedSizeBuffer.cs" />
+    <Compile Include="Interfaces\Endianess.cs" />
+    <Compile Include="Interfaces\IDataBuffer.cs" />
+    <Compile Include="Interfaces\IKnowMySize.cs" />
+    <Compile Include="Interfaces\IPduBuffer.cs" />
+    <Compile Include="Interfaces\IReadable.cs" />
+    <Compile Include="Interfaces\IReadableWritable.cs" />
+    <Compile Include="Interfaces\ITransferItem.cs" />
+    <Compile Include="Interfaces\ITransferValue.cs" />
+    <Compile Include="Interfaces\ITransferValueT.cs" />
+    <Compile Include="Interfaces\IWritable.cs" />
+    <Compile Include="PduBuffer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThisMachine.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

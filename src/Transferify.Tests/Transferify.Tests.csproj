@@ -56,8 +56,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBufferPositionTagger.cs" />
     <Compile Include="DataBufferSeekerTests.cs" />
+    <Compile Include="DataTypes\BooleanTests.cs" />
+    <Compile Include="DataTypes\ByteArrayTests.cs" />
+    <Compile Include="DataTypes\EnumerationTests.cs" />
+    <Compile Include="DataTypes\HighNibbleTests.cs" />
+    <Compile Include="DataTypes\IpAddressTests.cs" />
+    <Compile Include="DataTypes\LowNibbleTests.cs" />
+    <Compile Include="DataTypes\MacAddressTests.cs" />
+    <Compile Include="DataTypes\OctetStringTests.cs" />
+    <Compile Include="DataTypes\Unsigned16Tests.cs" />
+    <Compile Include="DataTypes\Unsigned32Tests.cs" />
+    <Compile Include="DataTypes\Unsigned8Tests.cs" />
+    <Compile Include="DataTypes\UuidTests.cs" />
+    <Compile Include="DataTypes\VisibleStringTests.cs" />
     <Compile Include="DynamicSizeBufferTests.cs" />
     <Compile Include="FixedSizeBufferTests.cs" />
     <Compile Include="PduBufferTests.cs" />
@@ -65,13 +77,13 @@
     <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Transferify\Transferify.csproj">
-      <Project>{d6476ba3-5867-4693-bf46-5197f3ed150f}</Project>
-      <Name>Transferify</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Transferify\Transferify.csproj">
+      <Project>{3172c817-0aa5-4ba6-8c59-7de72bf31870}</Project>
+      <Name>Transferify</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

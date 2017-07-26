@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Transferify
 {
     public class BufferOverflowException : Exception
